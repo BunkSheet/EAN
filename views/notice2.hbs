@@ -442,12 +442,15 @@
     }
 
     function checkButton() {
-      var registerid = document.getElementById("register_id").value;
+      var dataid = new FormData();
+       var registerid = document.getElementById("register_id").value;
+      dataid.append('id',registerid);
+     
       console.log(registerid);
       $.ajax({
         type: 'POST',
         url:"/cc/getEmail",
-        data: { id: registerid },
+        data: dataid ,
         success: function (result) {
           console.log(result);
           $("#create_account").attr("disabled", false);
