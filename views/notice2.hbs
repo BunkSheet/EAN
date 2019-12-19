@@ -450,7 +450,7 @@
       $.ajax({
         type: 'POST',
         url:"/cc/getEmail",
-        body: dataid ,
+        data: JSON.stringify(dataid) ,
          processData: false,
          contentType: 'application/x-www-form-urlencoded',
         success: function (result) {
