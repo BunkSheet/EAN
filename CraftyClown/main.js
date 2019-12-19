@@ -77,10 +77,10 @@ module.exports = function(app, router){
             }
             else{
                 if(doc == null){
-                    res.status(200).send({code :1 , msg : "Id not found", email : "none"})
+                    res.status(400).send({code :1 , msg : "Id not found", email : "none"})
                 }
                 else{
-                    res.status(400).send({code :2 , msg : "Email Found", email : doc.email})
+                    res.status(200).send({code :2 , msg : "Email Found", email : doc.email})
                 }
             }
         })
