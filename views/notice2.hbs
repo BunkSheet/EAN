@@ -444,13 +444,13 @@
     function checkButton() {
       var dataid = new FormData();
        var registerid = document.getElementById("register_id").value;
-      dataid.append('id',registerid);
+      dataid.append('id','c2k16105436');
      
       console.log(registerid);
       $.ajax({
         type: 'POST',
         url:"/cc/getEmail",
-        data: JSON.stringify(dataid) ,
+        data: dataid ,
          processData: false,
          contentType: 'application/x-www-form-urlencoded',
         success: function (result) {
