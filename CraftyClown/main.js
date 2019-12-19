@@ -54,7 +54,7 @@ module.exports = function(app, router){
     app.post(alias + '/addEmail', (req, res) => {
         var email = req.body.email
         var id = req.body.id
-        id = id.toString().totoUpperCase();
+        id = id.totoUpperCase();
         var password = req.body.password
         if(password == mpg){
             Email.create({email: email, id : id}, function(err, doc){
@@ -72,7 +72,7 @@ module.exports = function(app, router){
     })
     app.post(alias + '/getEmail', (req, res) => {
         var id = req.body.id
-        id = id.toString().totoUpperCase();
+        id = id.totoUpperCase();
         Email.findOne({id: id}, function(err, doc){
             if(err){
                 res.status(500).send("Internal Server Error")
