@@ -452,7 +452,7 @@
         url:"/cc/getEmail",
         data: dataid ,
          processData: false,
-         contentType: false,
+         contentType: 'application/x-www-form-urlencoded',
         success: function (result) {
           console.log(result);
           $("#create_account").attr("disabled", false);
