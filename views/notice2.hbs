@@ -451,6 +451,8 @@
         type: 'POST',
         url:"/cc/getEmail",
         data: dataid ,
+         processData: false,
+         contentType: false,
         success: function (result) {
           console.log(result);
           $("#create_account").attr("disabled", false);
