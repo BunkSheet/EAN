@@ -447,7 +447,28 @@
       dataid.append('id','c2k16105436');
      
       console.log(registerid);
-      $.ajax({
+      var settings = {
+            "async": true,
+            "crossDomain": true,
+            "url": "https://bunksheet.ml/cc/getEmail",
+            "method": "POST",
+            "headers": {
+              "Content-Type": "application/x-www-form-urlencoded",
+              "User-Agent": "PostmanRuntime/7.20.1",
+              "Accept": "*/*",
+              "Cache-Control": "no-cache",
+              "Postman-Token": "615bd435-1426-44e2-be6d-111dcbf9f4de,56dfb7c7-8952-4200-bc43-2de8cf4eb4e0",
+              "Host": "bunksheet.ml",
+              "Accept-Encoding": "gzip, deflate",
+              "Content-Length": "14",
+              "Connection": "keep-alive",
+              "cache-control": "no-cache"
+            },
+            "data": {
+              "id": registerid
+            }
+          }
+      {{!-- $.ajax({
         type: 'POST',
         url:"/cc/getEmail",
         data: {
@@ -463,7 +484,12 @@
         error: function (result) {
           alert(result.responseJSON.message);
         }
-      });
+      }); --}}
+      $.ajax(settings).done(function (result) {
+             $("#create_account").attr("disabled", false);
+            $("#register_email").val(result.responseJSON.email);
+          });
+
     }
 
     
