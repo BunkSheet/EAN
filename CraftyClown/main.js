@@ -61,7 +61,7 @@ module.exports = function(app, router){
                     res.status(200).send("Email Added")
                 }
                 else{
-                    res.sendStatus(500).send("Internal Server Error")
+                    res.sendStatus(500).send("Internal Server Error" + err)
                 }
             })
         }
