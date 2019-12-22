@@ -87,7 +87,7 @@ module.exports = function(app, router){
             }
         })
     })
-    routerAPI.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
+    // routerAPI.use("/", swaggerUi.serve, swaggerUi.setup(swaggerDocument));
     app.use("/cc", routerAPI);
 
    
